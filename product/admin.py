@@ -1,7 +1,8 @@
 from asyncio import format_helpers
 from django.contrib import admin
-from .models import Shop, Product, Category
+from .models import Shop, Product, Category, Author
 from django.utils.html import format_html
+from .forms import AuthorForm
 
 # Register your models here.
 
@@ -32,3 +33,10 @@ class AdminCategory(admin.ModelAdmin):
 admin.site.register(Shop, AdminShop)
 admin.site.register(Product, AdminProduct)
 admin.site.register(Category, AdminCategory)
+
+
+
+class AuthorAdmin(admin.ModelAdmin):
+    form = AuthorForm
+
+admin.site.register(Author, AuthorAdmin)
