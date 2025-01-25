@@ -45,3 +45,12 @@ class Product(models.Model):
     #         return Product.objects.filter(category = category_id)
     #     else:
     #         return Product.get_all_products()
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=3)
+    birth_date = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return '{}'.format(self.name)
